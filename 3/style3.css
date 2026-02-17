@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Заголовок */
+.title {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: none;
+}
+
+/* Контейнер для иконок */
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    min-height: 200px;
+}
+
+/* Обертка для каждой иконки */
+.icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0; 
+    transform: translateY(100px);
+    animation: slideUp 2s ease-out forwards;
+    animation-delay: var(--delay); 
+}
+
+/* Анимация выездания снизу */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.8);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Стили для SVG иконок */
+.icon {
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    fill: #764ba2; 
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении на иконку */
+.icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    fill: #667eea; 
+}
+
+/* Подпись под иконкой */
+.icon-label {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
